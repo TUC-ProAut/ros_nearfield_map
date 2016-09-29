@@ -1,0 +1,5 @@
+<launch>
+    <!-- using rviz for visualizing -->
+    <node name="rviz_nearfieldmap" pkg="rviz" type="rviz"
+      args="-d $(find nearfield_map)/config/rviz_nearfieldmap.rviz" />
+</launch>

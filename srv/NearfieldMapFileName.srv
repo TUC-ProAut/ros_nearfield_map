@@ -1,0 +1,5 @@
+## this file is similar to octomap_pa/srv/OctomapPaFileName.srv
+
+string filename
+---
+bool ok

@@ -1,0 +1,15 @@
+## this file is similar to octomap_pa/srv/OctomapPaGetSize.srv
+
+---
+# number of all octomap nodes (inner and outer)
+int32 size
+
+# total size in bytes
+int64 memoryusage
+
+# number of inserted depth images from camera (pointclouds)
+int32 count_camera
+# number of inserted single laserscans
+int32 count_laser_scan
+# number of inserted full laserscans (pointclouds)
+int32 count_laser_full

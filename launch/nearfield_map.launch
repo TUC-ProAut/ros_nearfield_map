@@ -1,0 +1,17 @@
+<launch>
+
+    <!-- launching the node for building and publishing the octomap -->
+    <node name="nearfield_map_node" pkg="nearfield_map"
+      type="nearfield_map_node" output="screen" respawn="true">
+        <!-- load parameter -->
+        <rosparam command="load"
+          file="$(find nearfield_map)/config/parameter.yaml" />
+    </node>
+
+    <!-- launching the input-filter for the camera -->
+    <include file="$(find nearfield_map)/launch/_filter_camera.launch" />
+
+    <!-- launching the input-filter for the laserscans -->
+    <include file="$(find nearfield_map)/launch/_filter_laser.launch" />
+
+</launch>

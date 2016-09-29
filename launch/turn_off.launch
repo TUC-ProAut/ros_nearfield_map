@@ -1,0 +1,9 @@
+<launch>
+
+  <node pkg="rosservice" type="rosservice" name="turn_off_nearfieldmap_camera"
+    output="screen" args="call pcdfilter_camera/disable '{}'" />
+
+  <node pkg="rosservice" type="rosservice" name="turn_off_nearfieldmap_laser"
+    output="screen" args="call pcdfilter_laser/disable '{}'" />
+
+</launch>

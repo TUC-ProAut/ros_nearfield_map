@@ -1,0 +1,11 @@
+# output throttle for topic publishing
+int16 throttle_count
+float64 throttle_time
+
+# output filter (bounding box)
+string filter_frame
+float64 filter_dx
+float64 filter_dy
+float64 filter_dz
+
+---

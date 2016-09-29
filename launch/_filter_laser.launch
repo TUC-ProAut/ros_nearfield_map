@@ -1,0 +1,11 @@
+<launch>
+
+    <!-- launching the node for filtering and republishing the pointcloud
+      for >>> laserscanner <<< -->
+    <node name="pcdfilter_laser" pkg="pcdfilter_pa"
+      type="pcdfilter_pa_node" output="log" respawn="true">
+        <!-- load parameter -->
+        <rosparam command="load"
+          file="$(find nearfield_map)/config/_parameter_filter_laser.yaml" />
+    </node>
+</launch>

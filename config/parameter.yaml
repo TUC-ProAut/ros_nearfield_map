@@ -1,0 +1,70 @@
+###### topics and services ######
+
+## input topics (pointclouds)
+topic_in_camera          : "xtion/depth_registered/points_filtered"
+topic_in_laser_scan      : "scan_filtered"
+topic_in_laser_full      : ""
+
+## output topics (nearfield-map as pointcloud)
+#topic_out_nearfield : "~out_nearfield"
+
+## additional output topics (octomap)
+#topic_out_octomap        : "~out_octomap"
+#topic_out_octomap_full   : "~out_octomap_full"
+
+## additional output topics (pointclouds)
+#topic_out_cloud_free      : "~out_cloud_free"
+#topic_out_cloud_occupied  : "~out_cloud_occupied"
+
+###### nearfield-map ######
+
+## output throttle (via output topic)
+#throttle_count: 0  # do not skip by count
+throttle_time : 0.33  # update rate is 3 Hz
+
+## map degrading
+degrading_time: 45.0 # seconds
+#auto_degrading: true
+auto_degrading_intervall: 5.0 # seconds
+
+## output filter (bounding box)
+filter_frame: "base_footprint"
+filter_dx: 5
+filter_dy: 5
+filter_dz: 3
+
+###### octomap ######
+
+## frame of the octomap (coordinate system for insertion and output)
+output_frame  :  "odom"
+
+## resolution of octomap (side length of one voxel)
+map_resolution: 0.05  # meters
+
+## threshold for binary evaluation of single voxel (occupied or free)
+#map_prob_threshold:  0.5  # 50%
+
+## clamping values (to promote prunning)
+#map_clamp_min:  0.12  # 12%
+#map_clamp_max:  0.97  # 97%
+
+###### input from camera ######
+
+## probalitity that a positiv mesaurement relates to a occupied voxel
+#camera_prob_hit :  0.7  # 70%
+## probalitity that a negativ mesaurement relates to a occupied voxel
+#camera_prob_miss:  0.4  # 40%
+
+###### input from single laser scan ######
+
+## probalitity that a positiv mesaurement relates to a occupied voxel
+laser_scan_prob_hit :  0.9  # 90%
+## probalitity that a negativ mesaurement relates to a occupied voxel
+laser_scan_prob_miss:  0.1  # 10%
+
+###### input from full laser scan ######
+
+## probalitity that a positiv mesaurement relates to a occupied voxel
+#laser_full_prob_hit :  0.7  # 70%
+## probalitity that a negativ mesaurement relates to a occupied voxel
+#laser_full_prob_miss:  0.4  # 40%

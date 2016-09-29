@@ -1,0 +1,11 @@
+<launch>
+
+    <!-- launching the node for filtering and republishing the pointcloud
+      for >>> camera <<< -->
+    <node name="pcdfilter_camera" pkg="pcdfilter_pa"
+      type="pcdfilter_pa_node" output="log" respawn="true">
+        <!-- load parameter -->
+        <rosparam command="load"
+          file="$(find nearfield_map)/config/_parameter_filter_camera.yaml" />
+    </node>
+</launch>
