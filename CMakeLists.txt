@@ -74,8 +74,6 @@ add_dependencies(${PROJECT_NAME}_node
 )
 target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
-  octomap_pa_ros
-  pcdfilter_pa_ros
 )
 
 # degrading node - pa
@@ -90,8 +88,6 @@ add_dependencies(${PROJECT_NAME}_degrading_pa_node
 )
 target_link_libraries(${PROJECT_NAME}_degrading_pa_node
   ${catkin_LIBRARIES}
-  octomap_pa_stamped_ros
-  pcdfilter_pa_ros
 )
 
 # degrading node - native
@@ -106,6 +102,4 @@ add_dependencies(${PROJECT_NAME}_degrading_native_node
 )
 target_link_libraries(${PROJECT_NAME}_degrading_native_node
   ${catkin_LIBRARIES}
-  octomap_pa_stamped_ros
-  pcdfilter_pa_ros
 )
