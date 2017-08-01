@@ -15,7 +15,7 @@
 *                                                                             *
 * New BSD License                                                             *
 *                                                                             *
-* Copyright (c) 2015-2016, Peter Weissig, Technische Universität Chemnitz     *
+* Copyright (c) 2015-2017, Peter Weissig, Technische Universität Chemnitz     *
 * All rights reserved.                                                        *
 *                                                                             *
 * Redistribution and use in source and binary forms, with or without          *
@@ -68,10 +68,10 @@
 
 #include <octomap_msgs/Octomap.h>
 
-#include <addcloud_parameter.h>
-#include <parameter_pa_ros.h>
-#include <pcdfilter_pa_ros.h>
-#include <pcdfilter_pa_ros_throttle.h>
+#include <octomap_pa/addcloud_parameter.h>
+#include <parameter_pa/parameter_pa_ros.h>
+#include <pcdfilter_pa/pcdfilter_pa_ros.h>
+#include <pcdfilter_pa/pcdfilter_pa_ros_throttle.h>
 
 
 // standard headers

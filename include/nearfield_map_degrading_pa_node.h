@@ -15,7 +15,7 @@
 *                                                                             *
 * New BSD License                                                             *
 *                                                                             *
-* Copyright (c) 2015-2016, Peter Weissig, Technische Universität Chemnitz     *
+* Copyright (c) 2015-2017, Peter Weissig, Technische Universität Chemnitz     *
 * All rights reserved.                                                        *
 *                                                                             *
 * Redistribution and use in source and binary forms, with or without          *
@@ -54,8 +54,8 @@
 // ros headers
 #include <ros/ros.h>
 
-#include <octree_stamped_pa_ros.h>
-#include <addcloud_parameter.h>
+#include <octomap_pa/octree_stamped_pa_ros.h>
+#include <octomap_pa/addcloud_parameter.h>
 
 
 // standard headers
