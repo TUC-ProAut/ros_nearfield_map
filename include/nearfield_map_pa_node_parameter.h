@@ -15,7 +15,7 @@
 *                                                                             *
 * New BSD License                                                             *
 *                                                                             *
-* Copyright (c) 2015-2016, Peter Weissig, Technische Universität Chemnitz     *
+* Copyright (c) 2015-2017, Peter Weissig, Technische Universität Chemnitz     *
 * All rights reserved.                                                        *
 *                                                                             *
 * Redistribution and use in source and binary forms, with or without          *
@@ -55,7 +55,7 @@ class cNearfieldMapPaNodeParameter {
     cNearfieldMapPaNodeParameter(void);
 
     //! name of the topic for subscribing depth images from camera
-    //! ("~in_camera")
+    //! ("~/in_camera")
     std::string topic_in_camera_;
     //! name of the topic for subscribing single laserscans ("in_laser_scan")
     std::string topic_in_laser_scan_;
@@ -63,23 +63,23 @@ class cNearfieldMapPaNodeParameter {
     std::string topic_in_laser_full_;
 
     //! name of the topic for publishing occupied voxels as pointcloud
-    //! ("~out_nearfield")
+    //! ("~/out_nearfield")
     std::string topic_out_nearfield_;
 
-    //! name of the topic for publishing the octomap ("~out_octomap")
+    //! name of the topic for publishing the octomap ("~/out_octomap")
     std::string topic_out_octomap_;
-    //! name of the topic for publishing the octomap ("~out_octomap_full")
+    //! name of the topic for publishing the octomap ("~/out_octomap_full")
     std::string topic_out_octomap_full_;
 
     //! name of the topic for publishing free voxels as pointcloud
-    //! ("~out_cloud_free")
+    //! ("~/out_cloud_free")
     std::string topic_out_cloud_free_;
     //! name of the topic for publishing occupied voxels as pointcloud
-    //! ("~out_cloud_occupied")
+    //! ("~/out_cloud_occupied")
     std::string topic_out_cloud_occupied_;
 
 
-    //! name of the topic for clearing the octomap ("~in_clear")
+    //! name of the topic for clearing the octomap ("~/in_clear")
     std::string topic_in_clear_;
 
     //! frame id expressing the center and orientation of bounding box

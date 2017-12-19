@@ -15,7 +15,7 @@
 *                                                                             *
 * New BSD License                                                             *
 *                                                                             *
-* Copyright (c) 2015-2016, Peter Weissig, Technische Universität Chemnitz     *
+* Copyright (c) 2015-2017, Peter Weissig, Technische Universität Chemnitz     *
 * All rights reserved.                                                        *
 *                                                                             *
 * Redistribution and use in source and binary forms, with or without          *
@@ -51,20 +51,20 @@
 //**************************[cNearfieldMapPaNodeParameter]*********************
 cNearfieldMapPaNodeParameter::cNearfieldMapPaNodeParameter() {
     // topics
-    topic_in_camera_     = "~in_camera"    ;
-    topic_in_laser_scan_ = "~in_laser_scan";
-    topic_in_laser_full_ = "~in_laser_full";
+    topic_in_camera_     = "~/in_camera"    ;
+    topic_in_laser_scan_ = "~/in_laser_scan";
+    topic_in_laser_full_ = "~/in_laser_full";
 
-    topic_out_nearfield_ = "~out_nearfield";
+    topic_out_nearfield_ = "~/out_nearfield";
 
-    topic_out_octomap_      = "~out_octomap"     ;
-    topic_out_octomap_full_ = "~out_octomap_full";
+    topic_out_octomap_      = "~/out_octomap"     ;
+    topic_out_octomap_full_ = "~/out_octomap_full";
 
-    topic_out_cloud_free_      = "~out_cloud_free"     ;
-    topic_out_cloud_occupied_  = "~out_cloud_occupied" ;
+    topic_out_cloud_free_      = "~/out_cloud_free"     ;
+    topic_out_cloud_occupied_  = "~/out_cloud_occupied" ;
 
     // services
-    topic_in_clear_          = "~in_clear"       ;
+    topic_in_clear_          = "~/in_clear"       ;
 
     // bounding box for output
     filter_frame_ = "base_footprint";

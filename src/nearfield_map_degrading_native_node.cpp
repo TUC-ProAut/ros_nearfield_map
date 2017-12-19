@@ -67,9 +67,9 @@ int main(int argc, char **argv) {
 cNearfieldMapDegradingNativeNode::cNearfieldMapDegradingNativeNode() {
 
     cParameterPaRos paramloader;
-    paramloader.load("~degrading_time"          , rosparams_.degrading_time_);
-    paramloader.load("~auto_degrading"          , rosparams_.auto_degrading_);
-    paramloader.load("~auto_degrading_intervall",
+    paramloader.load("~/degrading_time"          , rosparams_.degrading_time_);
+    paramloader.load("~/auto_degrading"          , rosparams_.auto_degrading_);
+    paramloader.load("~/auto_degrading_intervall",
       rosparams_.auto_degrading_intervall_);
 
     // Subscriber for depth images from camera
