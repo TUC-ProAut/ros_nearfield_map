@@ -6,7 +6,7 @@
 *******************************************************************************
 *                                                                             *
 * github repository                                                           *
-*   https://github.com/peterweissig/ros_nearfield_map                         *
+*   https://github.com/TUC-ProAut/ros_nearfield_map                           *
 *                                                                             *
 * Chair of Automation Technology, Technische Universität Chemnitz             *
 *   https://www.tu-chemnitz.de/etit/proaut                                    *
@@ -15,7 +15,7 @@
 *                                                                             *
 * New BSD License                                                             *
 *                                                                             *
-* Copyright (c) 2015-2017, Peter Weissig, Technische Universität Chemnitz     *
+* Copyright (c) 2015-2019, Peter Weissig, Technische Universität Chemnitz     *
 * All rights reserved.                                                        *
 *                                                                             *
 * Redistribution and use in source and binary forms, with or without          *
@@ -60,76 +60,76 @@ template <typename NEARFIELDMAP>
     cParameterPaRos paramloader;
 
     // output throttle
-    paramloader.load("~throttle_count"    , output_throttle_.skip_count_);
-    paramloader.load("~throttle_time"     , output_throttle_.skip_time_ );
+    paramloader.load("~/throttle_count"    , output_throttle_.skip_count_);
+    paramloader.load("~/throttle_time"     , output_throttle_.skip_time_ );
 
     // output filter (bounding box)
-    paramloader.load("~filter_frame", nodeparams_.filter_frame_);
-    paramloader.load("~filter_dx"   , nodeparams_.filter_dx_   );
-    paramloader.load("~filter_dy"   , nodeparams_.filter_dy_   );
-    paramloader.load("~filter_dz"   , nodeparams_.filter_dz_   );
+    paramloader.load("~/filter_frame", nodeparams_.filter_frame_);
+    paramloader.load("~/filter_dx"   , nodeparams_.filter_dx_   );
+    paramloader.load("~/filter_dy"   , nodeparams_.filter_dy_   );
+    paramloader.load("~/filter_dz"   , nodeparams_.filter_dz_   );
     changeSettings();
 
     // global octomap parameter
-    paramloader.load("~output_frame",
+    paramloader.load("~/output_frame",
       NEARFIELDMAP::rosparams_base_.output_frame_);
 
     // octomap parameter
     double temp;
 
     temp = 0.1 ;
-    paramloader.load("~map_resolution"    , temp);
+    paramloader.load("~/map_resolution"    , temp);
     NEARFIELDMAP::setResolution(temp);
 
     temp = 0.5 ;
-    paramloader.load("~map_prob_threshold", temp);
+    paramloader.load("~/map_prob_threshold", temp);
     NEARFIELDMAP::setOccupancyThres(temp);
 
     temp = 0.12;
-    paramloader.load("~map_clamp_min"     , temp);
+    paramloader.load("~/map_clamp_min"     , temp);
     NEARFIELDMAP::setClampingThresMin(temp);
 
     temp = 0.97;
-    paramloader.load("~map_clamp_max"     , temp);
+    paramloader.load("~/map_clamp_max"     , temp);
     NEARFIELDMAP::setClampingThresMax(temp);
 
     // sensor specific parameter
-    paramloader.load("~camera_prob_hit"     ,
+    paramloader.load("~/camera_prob_hit"     ,
       params_addcloud_camera_.map_prob_hit_     );
-    paramloader.load("~camera_prob_miss"    ,
+    paramloader.load("~/camera_prob_miss"    ,
       params_addcloud_camera_.map_prob_miss_    );
-    paramloader.load("~laser_prob_hit"      ,
+    paramloader.load("~/laser_prob_hit"      ,
       params_addcloud_laser_scan_.map_prob_hit_ );
-    paramloader.load("~laser_prob_miss"     ,
+    paramloader.load("~/laser_prob_miss"     ,
       params_addcloud_laser_scan_.map_prob_miss_);
-    paramloader.load("~laser_full_prob_hit" ,
+    paramloader.load("~/laser_full_prob_hit" ,
       params_addcloud_laser_full_.map_prob_hit_ );
-    paramloader.load("~laser_full_prob_miss",
+    paramloader.load("~/laser_full_prob_miss",
       params_addcloud_laser_full_.map_prob_miss_);
 
     // topics in
-    paramloader.load_topic("~topic_in_camera"    ,
+    paramloader.load_topic("~/topic_in_camera"    ,
       nodeparams_.topic_in_camera_    );
-    paramloader.load_topic("~topic_in_laser_scan",
+    paramloader.load_topic("~/topic_in_laser_scan",
       nodeparams_.topic_in_laser_scan_);
-    paramloader.load_topic("~topic_in_laser_full",
+    paramloader.load_topic("~/topic_in_laser_full",
       nodeparams_.topic_in_laser_full_);
 
     // topics out
-    paramloader.load_topic("~topic_out_nearfield",
+    paramloader.load_topic("~/topic_out_nearfield",
       nodeparams_.topic_out_nearfield_);
 
-    paramloader.load_topic("~topic_out_octomap"        ,
+    paramloader.load_topic("~/topic_out_octomap"        ,
       nodeparams_.topic_out_octomap_);
-    paramloader.load_topic("~topic_out_octomap_full"   ,
+    paramloader.load_topic("~/topic_out_octomap_full"   ,
       nodeparams_.topic_out_octomap_full_);
-    paramloader.load_topic("~topic_out_cloud_free"     ,
+    paramloader.load_topic("~/topic_out_cloud_free"     ,
       nodeparams_.topic_out_cloud_free_);
-    paramloader.load_topic("~topic_out_cloud_occupied" ,
+    paramloader.load_topic("~/topic_out_cloud_occupied" ,
       nodeparams_.topic_out_cloud_occupied_);
 
     // services as topic
-    paramloader.load_topic("~topic_in_clear" , nodeparams_.topic_in_clear_ );
+    paramloader.load_topic("~/topic_in_clear" , nodeparams_.topic_in_clear_ );
 
 
     // puplisher for the octomap (binary data)
@@ -154,8 +154,8 @@ template <typename NEARFIELDMAP>
       nodeparams_.topic_in_clear_, 1,
       &cNearfieldMapBasePaNode::clearCallbackSub, this);
 
-    std::string str_service("~");
-    paramloader.resolve_ressourcename(str_service);
+    std::string str_service = paramloader.resolveRessourcename("~/");
+
     // service for clearing the octomap
     srv_clear_   = nh_.advertiseService(str_service + "clear",
       &cNearfieldMapBasePaNode::clearCallbackSrv, this);
