@@ -108,28 +108,28 @@ template <typename NEARFIELDMAP>
       params_addcloud_laser_full_.map_prob_miss_);
 
     // topics in
-    paramloader.load_topic("~/topic_in_camera"    ,
+    paramloader.loadTopic("~/topic_in_camera"    ,
       nodeparams_.topic_in_camera_    );
-    paramloader.load_topic("~/topic_in_laser_scan",
+    paramloader.loadTopic("~/topic_in_laser_scan",
       nodeparams_.topic_in_laser_scan_);
-    paramloader.load_topic("~/topic_in_laser_full",
+    paramloader.loadTopic("~/topic_in_laser_full",
       nodeparams_.topic_in_laser_full_);
 
     // topics out
-    paramloader.load_topic("~/topic_out_nearfield",
+    paramloader.loadTopic("~/topic_out_nearfield",
       nodeparams_.topic_out_nearfield_);
 
-    paramloader.load_topic("~/topic_out_octomap"        ,
+    paramloader.loadTopic("~/topic_out_octomap"        ,
       nodeparams_.topic_out_octomap_);
-    paramloader.load_topic("~/topic_out_octomap_full"   ,
+    paramloader.loadTopic("~/topic_out_octomap_full"   ,
       nodeparams_.topic_out_octomap_full_);
-    paramloader.load_topic("~/topic_out_cloud_free"     ,
+    paramloader.loadTopic("~/topic_out_cloud_free"     ,
       nodeparams_.topic_out_cloud_free_);
-    paramloader.load_topic("~/topic_out_cloud_occupied" ,
+    paramloader.loadTopic("~/topic_out_cloud_occupied" ,
       nodeparams_.topic_out_cloud_occupied_);
 
     // services as topic
-    paramloader.load_topic("~/topic_in_clear" , nodeparams_.topic_in_clear_ );
+    paramloader.loadTopic("~/topic_in_clear" , nodeparams_.topic_in_clear_ );
 
 
     // puplisher for the octomap (binary data)
