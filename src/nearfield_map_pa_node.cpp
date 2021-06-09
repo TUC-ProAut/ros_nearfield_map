@@ -105,7 +105,7 @@ void cNearfieldMapPaNode::addPcdCameraCallbackSub(
     tf::StampedTransform transform;
     if (! checkTF(msg->header, transform)) { return;}
 
-    if (addCloud(msg, params_addcloud_camera_, transform)) {
+    if (addCloud(*msg, params_addcloud_camera_, transform)) {
         count_camera_++;
         publish();
     }
@@ -123,7 +123,7 @@ void cNearfieldMapPaNode::addPcdLaserScanCallbackSub(
     tf::StampedTransform transform;
     if (! checkTF(msg->header, transform)) { return;}
 
-    if (addCloud(msg, params_addcloud_laser_scan_, transform)) {
+    if (addCloud(*msg, params_addcloud_laser_scan_, transform)) {
         count_laser_scan_++;
         publish();
     }
@@ -141,7 +141,7 @@ void cNearfieldMapPaNode::addPcdLaserFullCallbackSub(
     tf::StampedTransform transform;
     if (! checkTF(msg->header, transform)) { return;}
 
-    if (addCloud(msg, params_addcloud_laser_full_, transform)) {
+    if (addCloud(*msg, params_addcloud_laser_full_, transform)) {
         count_laser_full_++;
         publish();
     }
